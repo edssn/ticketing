@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: edssn/orders
+          image: edissonsigua/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

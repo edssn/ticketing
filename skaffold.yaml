@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: edssn/auth
+    - image: edissonsigua/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: edssn/client
+    - image: edissonsigua/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: edssn/tickets
+    - image: edissonsigua/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -32,7 +32,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: edssn/orders
+    - image: edissonsigua/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -40,7 +40,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: edssn/expiration
+    - image: edissonsigua/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -48,7 +48,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: edssn/payments
+    - image: edissonsigua/payments
       context: payments
       docker:
         dockerfile: Dockerfile

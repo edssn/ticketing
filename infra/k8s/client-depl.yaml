@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: edssn/client
+          image: edissonsigua/client
 ---
 apiVersion: v1
 kind: Service

@@ -1,0 +1,2 @@
+## Tecnology
+- Next.JS
