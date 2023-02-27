@@ -42,10 +42,10 @@ This project was developed in **Ubuntu 22.04**
 | NodeJS  | React | Mongo/Redis | Skaffold |
 
 ## Requeriments
-1. Docker instalado.
-2. Clúster de Kubernets. En este proyecto se utilizó minikube (https://minikube.sigs.k8s.io/docs/start/).
-3. Crear un ingress controller en kubernets. En este proyecto se utilizó ingress-inginx en minikube (https://kubernetes.github.io/ingress-nginx/deploy/#minikube) ![Working Image](/assets/ingress.png)
-4. Skaffold. Skaffold es opcional, pero facilita el despliegue en modo desarrollo con 1 solo comando. Si prefieres, puedes crear cada deployment manualmente. (https://skaffold.dev/docs/install/)
+1. Docker.
+2. Kubernets Cluster. I used minikube (https://minikube.sigs.k8s.io/docs/start/).
+3. Ingress Controller created on kubernets. I used ingress-inginx to minikube (https://kubernetes.github.io/ingress-nginx/deploy/#minikube) ![Working Image](/assets/ingress.png)
+4. Skaffold (optional). Skaffold makes it easier develop and deploy the entire app (skaffol dev). You can create all deployments one by one. (https://skaffold.dev/docs/install/)
 
 
 ## Common Response Structure
