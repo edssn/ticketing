@@ -22,10 +22,10 @@ This project was developed in **Ubuntu 22.04**
 
 ## Events
 
-`UserCreated` `UserUpdated`
-`OrderCreated` `OrderCancelled` `OrderExired`
-`TicketCreated` `TicketUpdated` 
-`ChargeCreated`
+`UserCreated` `UserUpdated` <br>
+`OrderCreated` `OrderCancelled` `OrderExired` <br>
+`TicketCreated` `TicketUpdated` <br>
+`ChargeCreated` <br>
 
 
 
