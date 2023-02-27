@@ -22,16 +22,16 @@ This project was developed in **Ubuntu 22.04**
 
 ## Microservices Events
 
-#### Auth
+### Auth
 `UserCreated` `UserUpdated` <br>
 
-#### Orders
+### Orders
 `OrderCreated` `OrderCancelled` `OrderExired` <br>
 
-#### Tickets
+### Tickets
 `TicketCreated` `TicketUpdated` <br>
 
-#### Payments 
+### Payments 
 `ChargeCreated` <br>
 
 
