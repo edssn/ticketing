@@ -50,7 +50,7 @@ This project was developed in **Ubuntu 22.04**
 
 ## Common Response Structure
 
-Errors
+### Errors
 ```
 {
     errors: {
