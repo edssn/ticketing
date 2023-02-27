@@ -39,3 +39,16 @@ This project was developed in **Ubuntu 22.04**
 2. Clúster de Kubernets. En este proyecto se utilizó minikube (https://minikube.sigs.k8s.io/docs/start/).
 3. Crear un ingress controller en kubernets. En este proyecto se utilizó ingress-inginx en minikube (https://kubernetes.github.io/ingress-nginx/deploy/#minikube) ![Working Image](/assets/ingress.png)
 4. Skaffold. Skaffold es opcional, pero facilita el despliegue en modo desarrollo con 1 solo comando. Si prefieres, puedes crear cada deployment manualmente. (https://skaffold.dev/docs/install/)
+
+
+# Common Response Structure
+
+## Errors
+```
+{
+    errors: {
+        message: string,
+        field?: string    // optional
+    } [] // array 
+}
+```
