@@ -20,11 +20,18 @@ This project was developed in **Ubuntu 22.04**
 | *payments* | Handles credit card payments. Cancel orders if payments fails, completes if payment succeeds |
 
 
-## Events
+## Microservices Events
 
+#### Auth
 `UserCreated` `UserUpdated` <br>
+
+#### Orders
 `OrderCreated` `OrderCancelled` `OrderExired` <br>
+
+#### Tickets
 `TicketCreated` `TicketUpdated` <br>
+
+#### Payments 
 `ChargeCreated` <br>
 
 
@@ -34,16 +41,16 @@ This project was developed in **Ubuntu 22.04**
 | --- | --- | --- | --- |
 | NodeJS  | React | Mongo/Redis | Skaffold |
 
-# Requeriments
+## Requeriments
 1. Docker instalado.
 2. Clúster de Kubernets. En este proyecto se utilizó minikube (https://minikube.sigs.k8s.io/docs/start/).
 3. Crear un ingress controller en kubernets. En este proyecto se utilizó ingress-inginx en minikube (https://kubernetes.github.io/ingress-nginx/deploy/#minikube) ![Working Image](/assets/ingress.png)
 4. Skaffold. Skaffold es opcional, pero facilita el despliegue en modo desarrollo con 1 solo comando. Si prefieres, puedes crear cada deployment manualmente. (https://skaffold.dev/docs/install/)
 
 
-# Common Response Structure
+## Common Response Structure
 
-## Errors
+Errors
 ```
 {
     errors: {
