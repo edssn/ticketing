@@ -7,7 +7,7 @@
 - While locked, no other user can purchase the ticket. After 15 minutes, the ticket should *unlock*
 - Tcicket proces can be edited if they are not locked
 
-This project was developed in **Ubuntu 22.04**
+This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets** and developed with **React** and **NodeJS**.
 
 ## Microservices
 
