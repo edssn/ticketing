@@ -46,11 +46,11 @@ This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets**
 2. Kubernets Cluster. I used minikube (https://minikube.sigs.k8s.io/docs/start/).
 3. Ingress Controller created on kubernets. I used ingress-inginx to minikube (https://kubernetes.github.io/ingress-nginx/deploy/#minikube) ![Working Image](/assets/ingress.png)
 4. Skaffold (optional). Skaffold makes it easier develop and deploy the entire app (skaffol dev). You can create all deployments one by one. (https://skaffold.dev/docs/install/)
+5. Postman. Postman is used to test endpoints.
 
 
-## Common Response Structure
+## Common Error Response Structure
 
-### Errors
 ```
 {
     errors: {
@@ -59,3 +59,9 @@ This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets**
     } [] // array 
 }
 ```
+
+## Kubernets Secrets
+You need to execute the following command in order to create necesary secrets
+```
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+```  
