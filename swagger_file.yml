@@ -75,19 +75,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          description: Invalid email/password supplied or Invalid credentials
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorsResponse'
-        '401':
-          description: Unauthorized Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorsResponse'
+                $ref: '#/components/schemas/LoggedUser'
   /users/signout:
     post:
       tags:
