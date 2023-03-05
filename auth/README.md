@@ -30,19 +30,16 @@ This is the Microservice to handle authorization and acceso to the all services 
 ![Working Image](/assets/services/auth/signout.png)
 
 ## Errors Responses
-### Route Not Found
+### 
 ```
-HTTP 404
+Route Not Found (HTTP 404)
 {
     errors: {
         "message": "Route not found",
     }
 }
-```
 
-### Request Invalid
-```
-HTTP 400
+Request Invalid (HTTP 400)
 {
     "errors": [
         {
@@ -55,21 +52,15 @@ HTTP 400
         }
     ]
 }
-```
 
-### Database Connection
-```
-HTTP 503
+Database Connection (HTTP 503)
 {
     errors: {
         "message": "Error connectiong to database"
     }
 }
-```
 
-### Unknown
-```
-HTTP 400
+Unknown (HTTP 400)
 {
     errors: {
         "message": "Error connectiong to database"
