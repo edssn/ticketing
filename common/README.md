@@ -1,5 +1,5 @@
 ## Common Functions
-This is the project of a npm librery with commons errors, events and middlewares along the entire app. 
+This is the project of a npm library with commons errors, events and middlewares along the entire app. 
 
 ## Installation
 ```
@@ -97,7 +97,7 @@ if (!errors.isEmpty()) {
 
 
 
-### Middlewares
+## Middlewares
 #### Current User
 This is and NodeJS - Express Middleware to decode jwt inside cookie session and get information from logged user. The decoded information is set in currentUset attribute of Request object. 
 
@@ -165,4 +165,4 @@ router.post(
 ```
 
 
-### Events
+## Events
