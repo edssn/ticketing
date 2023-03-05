@@ -3,12 +3,10 @@ import mongoose from 'mongoose';
 import request from 'supertest';
 import { app } from '../app';
 
+mongoose.set('strictQuery', true);
+
 declare global {
-    namespace NodeJS {
-        interface Global {
-            signin(): Promise<string[]>
-        }
-    }
+    var signin: () => Promise<string[]>;
 }
 
 let mongo: any;

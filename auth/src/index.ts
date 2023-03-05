@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+mongoose.set('strictQuery', true);
+
 import { app } from './app';
 
 const start = async () => {
