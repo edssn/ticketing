@@ -76,3 +76,6 @@ HTTP 400
     }
 }
 ```
+
+## Swagger Test
+To tests endpoints with Swagger, open and copy all content of file *swagger_auth_file.txt*. Paste the content to [Swagger Online Editor](https://editor.swagger.io)
