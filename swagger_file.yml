@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: Auth Service - OpenAPI 3.0
+  description: |-
+    This is a description of Ticketing Auth Service
+  version: 1.0.11
+servers:
+  - url: https://ticketing.dev/api
+tags:
+  - name: users
+    description: Operations about Users
+paths:
+  /users/signup:
+    post:
+      tags:
+        - users
+      summary: Sign Up User
+      description: This service allow to register a new user in app.
+      operationId: signupUser
+      requestBody:
+        description: New user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid email/password supplied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorsResponse'
+  /users/signin:
+    post:
+      tags:
+        - users
+      summary: Sign In User
+      description: This service allow to sign in a user in app.
+      operationId: signinUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid email/password supplied or Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorsResponse'
+  /users/currentUser:
+    get:
+      tags:
+        - users
+      summary: Get Current Logged User
+      description: This service allow to get information about current logged user
+      operationId: currentUser
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid email/password supplied or Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorsResponse'
+        '401':
+          description: Unauthorized Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorsResponse'
+  /users/signout:
+    post:
+      tags:
+        - users
+      summary: Sign Out User
+      description: This service allow to sign out session
+      operationId: signoutUser
+      responses:
+        '200':
+          description: successful operation
+components:
+  schemas:
+    NewUser:
+      type: object
+      properties:
+        email:
+          type: string
+          example: abc@mail.com
+        password:
+          type: string
+          example: pass123
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 6403db967ec31defbc8aaa37
+        email:
+          type: string
+          example: abc@mail.com
+    LoggedUser:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 6403db967ec31defbc8aaa37
+        email:
+          type: string
+          example: abc@mail.com
+        iat:
+          type: integer
+          example: 1677975935
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Error Mesagge
+        field:
+          type: string
+          example: password
+    ErrorsResponse:
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+  requestBodies:
+    UserArray:
+      description: List of user object
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: session
