@@ -1,11 +1,19 @@
 # Ticketing App #
 
+Ticketing App is a project developed to learn about the operation of Microservices and Event Driven Architectures. 
+
 - Users can list a ticket for an event(concert, sport) for sale
 - Other users can purchase this ticket
 - Any user can list tickets for sale and purchase tickets
 - When user attempt to puchase a ticket, the ticket is *locked* for 15 minutes. The user has 15 minutes to enter their payment info
 - While locked, no other user can purchase the ticket. After 15 minutes, the ticket should *unlock*
-- Tcicket proces can be edited if they are not locked
+- Ticket proces can be edited if they are not locked
+
+## What did I learn in this project?
+- What are event-driven architectures and how do they work?
+- How communication between microservices is done with an event bus.
+- How to handle concurrency problems in event-driven architectures.
+- TTD - Test Drive Development in NodeJS World.
 
 This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets** and developed with **React** and **NodeJS**.
 
