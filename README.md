@@ -14,6 +14,7 @@ Ticketing App is a project developed to learn about the operation of Microservic
 - How communication between microservices is done with an event bus.
 - How to handle concurrency problems in event-driven architectures.
 - TTD - Test Drive Development in NodeJS World.
+- JEST and how configure it with NodeJS (Mocking imports with JEST).  
 
 This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets** and developed with **React** and **NodeJS**.
 

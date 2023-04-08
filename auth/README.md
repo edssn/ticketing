@@ -21,9 +21,9 @@ Properties that a User has
 Properties tied to the Model
 | **Name** | **Type** |
 | ------ | ----------- |
-| build   | `(attrs) => Doc` |
+| build   | `(UserAttrs) => UserDoc` |
 
-## Services
+## Endpoints
 | **Route** | **Method** | **Body** | **Porpuse** |
 | :------: | :-----------: | :-----------: | :-----------: |
 | `/api/users/signup` | POST | `{email: string, password: string}` | Sign up for an account
