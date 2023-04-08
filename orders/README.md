@@ -77,8 +77,6 @@ Properties tied to the Model
 ## Events
 
 ### Publish
-
-### Listen
 ##### OrderCreated
 Emited when a order is created `(POST /api/orders)`. 
 Event is sent to **`order:created`** queue. The `version` field is used to handle concurrency problems.
@@ -99,3 +97,5 @@ Event is sent to **`order:cancelled`** queue. The `version` field is used to han
 | id   | `string` |
 | ticket | `{id: string, price: number}` |
 | version | `number` |
+
+### Listen
