@@ -18,7 +18,7 @@ Properties that are required to build a new Ticket
 | title   | `string` |
 | price | `number` |
 | userId | `string (Ref to User)` |
-| orderId | `sring (Ref to Order)` |
+| orderId | `sring (Ref to Order) - Optional` |
 
 #### TicketDoc
 Properties that a Ticket has
@@ -70,3 +70,8 @@ Event is sent to **`ticket:updated`** nats streaming channel. The `version` fiel
 
 
 #### Listen
+##### OrderCreated
+Tickets service needs to be told that one of its tickets has been reserved, and no further edits to that ticket should be allowed.
+
+##### OrderCancelled
+Tickets service should unreserve a ticket if the corresponding order has beed cancelled so this ticket can be edited again.

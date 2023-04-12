@@ -164,5 +164,67 @@ router.post(
 ...
 ```
 
+## OrderStatus
+| **Name** | **Type** | **Description** |
+| ------ | ----------- | ----------- |
+| Created   | `created` | When the order has been created, but the ticket it is trying to order has not been reserve |
+| Cancelled | `cancelled` | The ticket the order is trying reserve has already or when the order expires before payment |
+| AwaitingPayment | `awaiting:payment` | The order has succesfully reserved the ticket |
+| Complete | `complete` | The order has reserves the ticket and the user has provided payment succesfully |
+
+
+## Event Subjects
+| **Name** | **Type** |
+| ------ | ----------- |
+| TicketCreated   | `ticket:created` |
+| TicketUpdated | `ticket:updated` |
+| OrderCreated | `order:created` |
+| OrderCancelled | `order:cancelled` |
+| ExpirationComplete | `expiration:complete` |
+| PaymentCreated | `payment:created` |
+
 
 ## Events
+
+##### TicketCreated
+Emited when a ticket is created `(POST /api/tickets)`. 
+Event is sent to **`ticket:created`** queue. The `version` field is used to handle concurrency problems.
+| **Name** | **Type** |
+| ------ | ----------- |
+| id   | `string` |
+| title | `string` |
+| price | `number` |
+| userId | `string (Ref to Urder)` |
+| version | `number` |
+
+##### TicketUpdated
+Emited when a ticket is updated `(PUT /api/tickets)`. 
+Event is sent to **`ticket:updated`** nats streaming channel. The `version` field is used to handle concurrency problems.
+| **Name** | **Type** |
+| ------ | ----------- |
+| id   | `string` |
+| title | `string` |
+| price | `number` |
+| userId | `sring (Ref to Urder)` |
+| version | `number` |
+
+##### OrderCreated
+Emited when a order is created `(POST /api/orders)`. 
+Event is sent to **`order:created`** queue. The `version` field is used to handle concurrency problems.
+| **Name** | **Type** |
+| ------ | ----------- |
+| id   | `string` |
+| status | `string (Ref to OrderStatus)` |
+| userId | `sring (Ref to Urder)` |
+| expiesAt | `date` |
+| ticket | `{id: string, price: number}` |
+| version | `number` |
+
+##### OrderCancelled
+Emited when a order is cancelled `(DELETE /api/orders/:id)`. 
+Event is sent to **`order:cancelled`** queue. The `version` field is used to handle concurrency problems.
+| **Name** | **Type** |
+| ------ | ----------- |
+| id   | `string` |
+| ticket | `{id: string, price: number}` |
+| version | `number` |

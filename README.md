@@ -7,7 +7,7 @@ Ticketing App is a project developed to learn about the operation of Microservic
 - Any user can list tickets for sale and purchase tickets
 - When user attempt to puchase a ticket, the ticket is *locked* for 15 minutes. The user has 15 minutes to enter their payment info
 - While locked, no other user can purchase the ticket. After 15 minutes, the ticket should *unlock*
-- Ticket proces can be edited if they are not locked
+- Ticket process can be edited if they are not locked
 
 ## What did I learn in this project?
 - What are event-driven architectures and how do they work?
