@@ -60,7 +60,7 @@ This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets**
 5. Postman. Postman is used to test endpoints.
 6. At final, execute the following commands to kubernets cluster.
 ```
-kubectl create secret generic jwt-secret --from-literal=JWT_KEY=abcd
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=sk_test...
 ```
 Value for *STRIPE_KEY* can be get from [STRIPE developer console ](https://market.strapi.io/plugins/strapi-stripe). Se more info in payments folder.
@@ -81,4 +81,5 @@ Value for *STRIPE_KEY* can be get from [STRIPE developer console ](https://marke
 You need to execute the following command in order to create necesary secrets
 ```
 kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=sk_test...
 ```  
