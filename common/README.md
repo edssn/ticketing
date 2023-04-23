@@ -228,3 +228,17 @@ Event is sent to **`order:cancelled`** queue. The `version` field is used to han
 | id   | `string` |
 | ticket | `{id: string, price: number}` |
 | version | `number` |
+
+##### ExpirationComplete
+This event is emitted 15 minutes after an order has been created and no payment has been received.
+| **Name** | **Type** |
+| ------ | ----------- |
+| orderId | `sring (Ref to Order)` |
+
+##### PaymentCreated
+Emmited when a customer pays for an order.
+| **Name** | **Type** |
+| ------ | ----------- |
+| id   | `string` |
+| orderId | `string (Ref to OrderStatus)` |
+| stripeId | `sring (Token with payment method used)` |

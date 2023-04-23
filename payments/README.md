@@ -3,8 +3,7 @@ This is the Microservice to handle payments processing in the app.
 
 [STRIPE ](https://market.strapi.io/plugins/strapi-stripe) developer api was used to simulate payments.
 
-### Charge Fields
-
+### Payments Fields
 
 | **Name** | **Type** |
 | ------ | ----------- |
@@ -18,6 +17,11 @@ This is the Microservice to handle payments processing in the app.
 | stripeId | string |
 | stripeRefundId | string |
 
+
+## Endpoints
+| **Route** | **Method** | **Body** | **Porpuse** |
+| :------: | :-----------: | :-----------: | :-----------: |
+| `/api/payments` | POST | `{orderId: string, token: string}` | Pay a order
 
 ## Models
 #### Order
@@ -71,23 +75,16 @@ Properties tied to the Model
 | build   | `(OrderAttrs) => PaymentDoc` |
 
 
-## Endpoints
-| **Route** | **Method** | **Body** | **Porpuse** |
-| :------: | :-----------: | :-----------: | :-----------: |
-| `/api/payments` | POST | `{orderId: string, token: string}` | Pay a order
-
 ## Events
+
+#### Publish
+##### PaymentCreated
 Emmited when a customer pays for an order.
 | **Name** | **Type** |
 | ------ | ----------- |
 | id   | `string` |
 | orderId | `string (Ref to OrderStatus)` |
 | stripeId | `sring (Token with payment method used)` |
-
-
-#### Publish
-##### PaymentCreated
-
 
 #### Listen
 ##### OrderCreated

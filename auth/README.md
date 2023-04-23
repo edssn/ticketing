@@ -1,23 +1,25 @@
 ## Auth Service
 This is the Microservice to handle authorization and acces to the all services in the app.
 
-## User Resource
 
-#### UserAttrs
+## Models
+
+#### User
+##### UserAttrs
 Properties that are required to build a new User
 | **Name** | **Type** |
 | ------ | ----------- |
 | email   | `string` |
 | password | `string` |
 
-#### UserDoc
+##### UserDoc
 Properties that a User has
 | **Name** | **Type** |
 | ------ | ----------- |
 | email   | `string` |
 | password | `string` |
 
-#### UserModel
+##### UserModel
 Properties tied to the Model
 | **Name** | **Type** |
 | ------ | ----------- |

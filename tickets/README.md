@@ -1,9 +1,9 @@
 ## Ticket Service
 This is the Microservice to handle tickets processing in the app.
 
-## Resources
 
-#### Fields
+
+## Fields
 | **Name** | **Description** |
 | ------ | ----------- |
 | `title`   | Title of event this tickets is for |
@@ -11,7 +11,12 @@ This is the Microservice to handle tickets processing in the app.
 | `userId` | ID of the user who is sellgin this ticket |
 | `version` | Version of this ticket. Increment every time this ticket is changed |
 
-#### TicketAttrs
+
+## Models
+
+### Ticket
+
+##### TicketAttrs
 Properties that are required to build a new Ticket
 | **Name** | **Type** |
 | ------ | ----------- |
@@ -20,7 +25,7 @@ Properties that are required to build a new Ticket
 | userId | `string (Ref to User)` |
 | orderId | `sring (Ref to Order) - Optional` |
 
-#### TicketDoc
+##### TicketDoc
 Properties that a Ticket has
 | **Name** | **Type** |
 | ------ | ----------- |
@@ -28,11 +33,12 @@ Properties that a Ticket has
 | price | `number` |
 | userId | `string (Ref to User)` |
 
-#### TicketModel
+##### TicketModel
 Properties tied to the Model
 | **Name** | **Type** |
 | ------ | ----------- |
 | build   | `(TicketAttrs) => TicketDoc` |
+
 
 ## Endpoints
 | **Route** | **Method** | **Body** | **Porpuse** |

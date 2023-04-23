@@ -37,7 +37,7 @@ export default function OrderShow ({ order, currentUser }) {
             Time left to pay the order: {timeLeft} seconds
             <StripeCheckout 
                 token={({ id }) => doRequest({ token: id})}
-                stripeKey="pk_test_51J3Z8cL793s3mSxQNLDqkWdXQaNoMBw2ujvqwthVbfsGPzpoPgZAK5JRGmXoU8ortW2pazhNv86CBmLRqZFvi7Au00edbQ5B7m"
+                stripeKey="pk_test_51J3Z8..."
                 amount={order.ticket.price * 100}
                 email={currentUser.email}
             />
