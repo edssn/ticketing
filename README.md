@@ -48,9 +48,9 @@ This project was developed in **Ubuntu 22.04** with **Docker** and **Kubernets**
 
 
 ## Tecnology ##
-| BackEnd | FrontEnd | Database | CI/CD |
-| --- | --- | --- | --- |
-| NodeJS  | React | Mongo/Redis | Skaffold |
+| BackEnd | FrontEnd | Database | CI/CD | Event Bus |
+| --- | --- | --- | --- | --- |
+| NodeJS  | React | Mongo/Redis | Skaffold / Github Actions | Nats-Streaming |
 
 ## Requeriments
 1. Docker.
