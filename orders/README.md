@@ -1,9 +1,8 @@
 ## Order Service
 This is the Microservice to handle orders processing in the app.
 
-## Resources
 
-#### Fields
+## Fields
 | **Name** | **Description** |
 | ------ | ----------- |
 | `userId` | User who created this order and is trying to buy a ticket. |
@@ -12,6 +11,7 @@ This is the Microservice to handle orders processing in the app.
 | `expiresAt` | Time at which this order expires (user has 15 mins to pay) |
 
 
+## Models
 #### Order
 
 ##### OrderStatus
@@ -46,33 +46,11 @@ Properties tied to the Model
 | ------ | ----------- |
 | build   | `(OrderAttrs) => OrderDoc` |
 
-### Ticket
-(Collection with reduced data of Tickets)
-
-##### TicketAttrs
-| **Name** | **Type** |
-| ------ | ----------- |
-| title   | `string` |
-| price | `number` |
-
-##### TicketDoc
-| **Name** | **Type** |
-| ------ | ----------- |
-| title   | `string` |
-| price | `number` |
-
-##### TicketModel
-| **Name** | **Type** |
-| ------ | ----------- |
-| build   | `(TicketAttrs) => TicketDoc` |
-
 ## Endpoints
 | **Route** | **Method** | **Body** | **Porpuse** |
 | :------: | :-----------: | :-----------: | :-----------: |
-| `/api/orders` | GET | `-` | Retrieve all active order for the given user making the request
-| `/api/orders/:id` | GET | `-` | Get details about a specific order
-| `/api/orders` | POST | `{ticketId: string` | Create an order to purchase the specified ticket
-| `/api/orders/:id` | DELETE | `-` | Cancel the order
+| `/api/orders` | POST | `{ticketId: string}` | Create a Order for a ticket
+
 
 ## Events
 
@@ -84,7 +62,7 @@ Event is sent to **`order:created`** queue. The `version` field is used to handl
 | ------ | ----------- |
 | id   | `string` |
 | status | `string (Ref to OrderStatus)` |
-| userId | `sring (Ref to Urder)` |
+| userId | `sring (Ref to User)` |
 | expiesAt | `date` |
 | ticket | `{id: string, price: number}` |
 | version | `number` |

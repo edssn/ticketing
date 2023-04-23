@@ -6,6 +6,11 @@ This project uses Bull JS to create a 15-minute timer after receiving a event **
 ## Events
 
 #### Publish
+##### ExpirationComplete
+This event is emitted 15 minutes after an order has been created and no payment has been received.
+| **Name** | **Type** |
+| ------ | ----------- |
+| orderId | `sring (Ref to Order)` |
 
 #### Listen
 ##### OrderCreated
