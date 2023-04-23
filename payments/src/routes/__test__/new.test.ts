@@ -14,14 +14,14 @@ it('return a 404 when purchasing an order that does not exist', async () => {
         .set('Cookie', global.signin())
         .send({
             token: 'asxasa',
-            orderId: mongoose.Types.ObjectId().toHexString(),
+            orderId: new mongoose.Types.ObjectId().toHexString(),
         })
         .expect(404);
 });
 
 it('return a 401 when purchasing an order that doesnt belong to the user', async () => {
     const order = Order.build({
-        id: mongoose.Types.ObjectId().toHexString(),
+        id: new mongoose.Types.ObjectId().toHexString(),
         userId: 'asxasxas',
         version: 0,
         price: 20,
@@ -40,10 +40,10 @@ it('return a 401 when purchasing an order that doesnt belong to the user', async
 });
 
 it('return a 404 when purchasing an cancelled order', async () => {
-    const userId = mongoose.Types.ObjectId().toHexString();
+    const userId = new mongoose.Types.ObjectId().toHexString();
 
     const order = Order.build({
-        id: mongoose.Types.ObjectId().toHexString(),
+        id: new mongoose.Types.ObjectId().toHexString(),
         userId: userId,
         version: 0,
         price: 20,
@@ -62,10 +62,10 @@ it('return a 404 when purchasing an cancelled order', async () => {
 });
 
 it('returns a 201 with valid inputs', async () => {
-    const userId = mongoose.Types.ObjectId().toHexString();
+    const userId = new mongoose.Types.ObjectId().toHexString();
     const price = Math.floor(Math.random() * 100000);
     const order = Order.build({
-        id: mongoose.Types.ObjectId().toHexString(),
+        id: new mongoose.Types.ObjectId().toHexString(),
         userId: userId,
         version: 0,
         price,

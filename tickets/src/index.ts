@@ -4,6 +4,8 @@ import { natsWrapper } from './nats-wrapper';
 import { OrderCreatedListener } from './events/listeners/order-created-listener';
 import { OrderCancelledListener } from './events/listeners/order-cancelled-listener';
 
+mongoose.set('strictQuery', true);
+
 const start = async () => {
     if (!process.env.NATS_CLUSTER_ID) {
         throw new Error('NATS_CLUSTER_ID must be defined');
@@ -37,11 +39,7 @@ const start = async () => {
         new OrderCreatedListener(natsWrapper.client).listen();
         new OrderCancelledListener(natsWrapper.client).listen();
 
-        await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-        });
+        await mongoose.connect(process.env.MONGO_URI, {});
         console.log('Connected to MondoDb');
     } catch (err) {
         console.error(err);

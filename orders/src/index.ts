@@ -6,6 +6,8 @@ import { TicketUpdatedListener } from './events/listeners/ticket-updated-listene
 import { ExpirationCompleteListener } from './events/listeners/expiration-complete-listener';
 import { PaymentCreatedListener } from './events/listeners/payment-created-listener';
 
+mongoose.set('strictQuery', true);
+
 const start = async () => {
     console.log('Starting.....');
     if (!process.env.NATS_CLUSTER_ID) {
@@ -42,11 +44,7 @@ const start = async () => {
         new ExpirationCompleteListener(natsWrapper.client).listen();
         new PaymentCreatedListener(natsWrapper.client).listen();
 
-        await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-        });
+        await mongoose.connect(process.env.MONGO_URI, {});
         console.log('Connected to MondoDb');
     } catch (err) {
         console.error(err);

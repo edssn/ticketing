@@ -2,6 +2,8 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 
+mongoose.set('strictQuery', true);
+
 declare global {
     namespace NodeJS {
         interface Global {
@@ -20,10 +22,7 @@ beforeAll(async () => {
     mongo = new MongoMemoryServer();
     const mongoUri = await mongo.getUri();
 
-    await mongoose.connect(mongoUri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+    await mongoose.connect(mongoUri, {});
 });
 
 beforeEach(async () => {
@@ -60,5 +59,5 @@ global.signin = () => {
     const base64 = Buffer.from(sessionJSON).toString('base64');
 
     // return a string thats the cookie with the encode data
-    return [`express:sess=${base64}`];
+    return [`session=${base64}`];
 };
